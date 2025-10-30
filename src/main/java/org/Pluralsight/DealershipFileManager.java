@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 public class DealershipFileManager {
     private static final String FILE_NAME = "dealership.csv";
 
@@ -23,7 +22,7 @@ public class DealershipFileManager {
                     dealership = new Dealership(name, address, phone);
                 }
             }
-            while ((line = br.readLine() != null)) {
+            while ((line = br.readLine()) != null) {
                 String[] parts = line.split("\\|");
                 if (parts.length >= 8 && dealership != null) {
                     int vin = Integer.parseInt(parts[0]);
@@ -52,7 +51,7 @@ public class DealershipFileManager {
                 bw.write(vehicle.toString());
                 bw.newLine();
             }
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
